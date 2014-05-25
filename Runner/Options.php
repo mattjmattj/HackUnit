@@ -18,7 +18,7 @@ class Options
      * @todo Annotate type as "this" when fixed in
      * nightly. Currently broken when using namespaces
      */
-    public function setTestPath(string $testPath): Options
+    public function setTestPath(string $testPath): this
     {
         $this->testPath = $testPath;
         return $this;
@@ -29,7 +29,7 @@ class Options
         return is_null($this->testPath) ? getcwd() : $this->testPath;
     }
 
-    public function setExcludedPaths(string $paths): Options
+    public function setExcludedPaths(string $paths): this
     {
         $this->excludedPaths = $paths;
         return $this;
@@ -41,7 +41,7 @@ class Options
         return new Set($paths);
     }
 
-    public function setHackUnitFile(string $hackUnitFile): Options
+    public function setHackUnitFile(string $hackUnitFile): this
     {
         $this->hackUnitFile = $hackUnitFile;
         return $this;
